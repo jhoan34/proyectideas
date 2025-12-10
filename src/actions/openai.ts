@@ -46,8 +46,9 @@ export const generateIdeas = async (data: ResponseData): Promise<Ideas> => {
       if (content) {
         return JSON.parse(content);
       }
-    } catch (error: any) {
-      const status = error?.response?.status;
+    } catch (error: unknown) {
+      const errore = error as { response: { status: number } };
+      const status = errore?.response?.status;
 
       if (status === 429) {
         console.warn(`Modelo ${model} agotó cuota. Probando siguiente...`);
