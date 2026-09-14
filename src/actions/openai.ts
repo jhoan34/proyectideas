@@ -15,8 +15,7 @@ export const generateIdeas = async (data: ResponseData): Promise<Ideas> => {
 
   // Modelos recomendados en OpenRouter (free)
   const models = [
-    "mistralai/devstral-2512:free",
-    "amazon/nova-2-lite-v1:free"      // A veces FREE
+    "nex-agi/nex-n2.5-mini:free"     // A veces FREE
   ];
 
   const systemMessage =
